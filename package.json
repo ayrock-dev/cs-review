@@ -1,0 +1,22 @@
+{
+  "name": "cs-review",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cs-review.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayrock-dev/cs-review.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayrock-dev/cs-review/issues"
+  },
+  "homepage": "https://github.com/ayrock-dev/cs-review#readme",
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}

@@ -1,6 +1,3 @@
-let input;
-let output;
-
 // insertion sort
 function insertionSort(items) {
     let key, i;
@@ -16,10 +13,6 @@ function insertionSort(items) {
     return items;
 }
 
-input = [5,2,4,6,1,3];
-output = insertionSort([...input]);
-console.log('insertion sort', input, output);
-
 // linear search
 function linearSearch(val, items) {
     for (let i = 0; i < items.length; i++) {
@@ -29,9 +22,6 @@ function linearSearch(val, items) {
     }
     return null;
 }
-
-output = linearSearch(6, [...input]);
-console.log('linear search, index of value 6', input, output);
 
 // add binary integer stored in lists of same length
 /*
@@ -77,10 +67,6 @@ function mergeSort(items, p, r) {
     merge(items, p, q, r);
 }
 
-input = [5,2,4,6,1,3];
-mergeSort(input);
-console.log('merge sort', [5,2,4,6,1,3], input);
-
 // binary search
 function binarySearch(items, val, lo, hi) {
     if (lo === undefined) lo = 0;
@@ -98,10 +84,6 @@ function binarySearch(items, val, lo, hi) {
         return binarySearch(items, val, lo, mid - 1);
     }
 }
-
-input = [[5,2,4,6,1,3], 4];
-output = binarySearch(...input);
-console.log('binary search', input, output);
 
 // maximum-subarray
 function maximumSubarrayOverMidline(items, lo, mid, hi) {
@@ -154,6 +136,50 @@ function maximumSubarray(items, lo, hi) {
     }
 }
 
-input = [[5,-2,4,-6,1,3], 0, 5];
-output = maximumSubarray(...input);
-console.log('maximum subarray', input, output);
+function squareMatrixMultiplyIterative(A, B) {
+    const size = A.length;
+    const result = [];
+
+    for (let i = 0; i < size; i++) {
+        result[i] = [];
+        for (let j = 0; j < size; j++) {
+            result[i][j] = 0;
+            for (let k = 0; k < size; k++) {
+                result[i][j] = result[i][j] + A[i][k] * B[k][j];
+            }
+        }
+    }
+
+    return result;
+}
+
+describe('squareMatrixMultiplyIterative', () => {
+    it('multiplies two square matrices iteratively', () => {
+        const A = [[2,2], [3,3]];
+        const B = [[4,4], [5,5]];
+        const output = squareMatrixMultiplyIterative(A, B);
+        expect(output).toEqual([[18,18], [27,27]]);
+    });
+});
+
+function squareMatrixMultiplyRecursive(A, B) {
+    const size = A_start[0] - A_end[0];
+    if (size === 1) {
+        const result = [[]];
+        result[0][0] = A[0][0] + B[0][0];
+    } else {
+
+    }
+    
+
+    return result;
+}
+
+describe('Strassen\'s Matrix multiplication', () => {
+    it('multiplies two square matrices recursively', () => {
+        const A = [[2,2], [3,3]];
+        const B = [[4,4], [5,5]];
+        const output = squareMatrixMultiplyRecursive(A, B);
+        expect(output).toEqual([[18,18], [27,27]]);
+    });
+});

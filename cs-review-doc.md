@@ -49,3 +49,11 @@
       * be entirely left of the midline
       * be entirely right of the midline
     * Base case: subarray is one element
+* Although asymptotic notation subsumes constant multiplicative factors, recursive notation such as T(n/2) does not
+* Strassen's method for matrix multiplication (CLRS 4.2) recursively mutiplies two square matricies, of n size where n is a power of 2
+  * Steps:
+    1. Divide the input matrices into n/2 x n/2 submatrices. This step takes "big theta"(1) time if using index calculation rather than copying the matrix into new, smaller matrices
+    1. Create 10 matrices, each of which is n/2 x n/2 and is the sum or difference of two matrices created in step 1. We create all 10 matrices in "big theta"(n^2) time
+    1. Using the submatrices created in step 1 and the 10 matrices in step 2, recursively compute the seven matrix products. Each matrix product is n/2 x n/2
+    1. Compute all the desired submatrices of the result matrix by adding and subtracting various combinations of the seven product matrices. We can compute all four submatrices in "big theta"(n^2) time.
+  * Strassen's method trades one matrix multiplication for seven matrix additions.
